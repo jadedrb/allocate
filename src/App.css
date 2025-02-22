@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.asset-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+.asset-form input {
+    width: fit-content;
+    margin: 5px;
+}
+
+.asset-form button {
+    width: fit-content;
+    margin: 10px;
+}
+
+.asset-form select {
+    width: fit-content;
+    margin: 5px;
+}
+
+.asset-form label span {
+    border: 1px dotted black;
+    padding: 5px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+path {
+    border: 3px solid black;
+}
