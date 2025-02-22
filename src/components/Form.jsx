@@ -49,6 +49,7 @@ export default function Form({ all, setAll }) {
         }
     
         setAll(newAll)
+        localStorage.setItem('groups', JSON.stringify(newAll))
     
         assetRef.current.value = ''
         percRef.current.value = ''
