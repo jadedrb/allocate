@@ -33,6 +33,13 @@
     cursor: pointer;
 }
 
+.asset-form label span {
+    border: 1px dotted black;
+    padding: 5px;
+    margin-left: 150px;
+    cursor: pointer;
+}
+
 path {
     border: 3px solid black;
 }

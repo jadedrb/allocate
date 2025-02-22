@@ -6,6 +6,9 @@ import { COLORS, formatCurrency, percent } from '../utility';
 const Chart = ({ data, total, category }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
+  const totalPercentage = data.reduce((acc, curr) => acc + curr.value, 0)
+
+  
   const renderCenterText = () => {
     if (activeIndex !== null) {
       const activeSlice = data[activeIndex];
@@ -26,18 +29,22 @@ const Chart = ({ data, total, category }) => {
     return null;
   };
 
-
   return (
     <ResponsiveContainer width="100%" height={400}>
       <PieChart>
-        <text x="50%" y="90" opacity={.4} textAnchor="middle" dominantBaseline="middle" fontSize={20} fontWeight="bold">
-          {category} - {formatCurrency(total)}
-        </text>
+        <g>
+          <text x="50%" y="80" opacity={.4} textAnchor="middle" dominantBaseline="middle" fontSize={20} fontWeight="bold">
+            {category} - {formatCurrency(total)}
+          </text>
+          <text x="50%" y="100" opacity={.2} textAnchor="middle" dominantBaseline="middle" fontSize={15} fontWeight="bold">
+            ({totalPercentage}%)
+          </text>
+        </g>
         <Pie
           data={data}
           cx="50%"
           cy="50%"
-          innerRadius={50}
+          innerRadius={60}
           outerRadius={80}
           paddingAngle={2}
           fill="#8884d8"
